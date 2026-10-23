@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: navi
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5452/navi}
+    username: ${DB_USERNAME:navi}
+    password: ${DB_PASSWORD:}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+
+server:
+  port: ${SERVER_PORT:8080}
+  forward-headers-strategy: framework
+  compression:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+app:
+  navi:
+    traces:
+      max-length: ${NAVI_TRACE_MAX_LENGTH:140}
+      cooldown: ${NAVI_TRACE_COOLDOWN:60s}
+      feed-size: ${NAVI_TRACE_FEED_SIZE:50}
+    wired:
+      max-visitors: ${NAVI_WIRED_MAX_VISITORS:300}
+      allowed-origins: ${NAVI_ALLOWED_ORIGINS:*}
+      cursor-interval: ${NAVI_WIRED_CURSOR_INTERVAL:50ms}
+      ping-interval: ${NAVI_WIRED_PING_INTERVAL:400ms}

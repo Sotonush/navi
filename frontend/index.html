@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAVI · Amir Suleimanov</title>
+    <meta name="description" content="Amir Suleimanov — full-stack developer and tech lead. Walk the street, enter the Wired, see who else is here." />
+    <meta property="og:title" content="NAVI · Amir Suleimanov" />
+    <meta property="og:description" content="Present day. Present time. Everyone is connected." />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Crect x='9' y='9' width='14' height='14' fill='none' stroke='%23f2efe9' stroke-width='2'/%3E%3Crect x='13' y='13' width='6' height='6' fill='%23ff3347'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Unbounded:wght@700;900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <canvas id="scene" aria-hidden="true"></canvas>
+
+    <div id="boot">
+      <div class="boot-inner">
+        <p class="boot-time">PRESENT DAY<br />PRESENT TIME.</p>
+        <h1 class="glitch" data-text="NAVI">NAVI</h1>
+        <p class="boot-sub">amir suleimanov · full-stack developer · tech lead</p>
+        <div class="boot-log" aria-live="polite"></div>
+        <div class="boot-actions">
+          <button type="button" class="boot-sound">[ connect with sound ♪ ]</button>
+          <button type="button" class="boot-connect">[ connect ]</button>
+        </div>
+      </div>
+    </div>
+
+    <header class="hud">
+      <div class="brand"><span class="sq"></span>NAVI <span class="hud-layer dim">LAYER:01 · present day</span></div>
+      <div class="hud-right">
+        <span id="status" data-state="connecting">○ connecting…</span>
+        <span id="clock" class="dim"></span>
+        <button id="sound" type="button" aria-pressed="false">♪ off</button>
+        <button id="lang" type="button">RU</button>
+      </div>
+    </header>
+
+    <nav class="rail" aria-label="layers"></nav>
+
+    <main>
+      <section class="layer l-hero" id="l1" data-layer="01" data-name="l1.title">
+        <div class="title-card" data-reveal><span class="lnum">Layer:01</span><span class="lname" data-i18n="l1.title">present day</span></div>
+        <h1 class="name glitch" data-text="AMIR SULEIMANOV" data-reveal>AMIR SULEIMANOV</h1>
+        <p class="hero-sub" data-i18n="l1.sub" data-reveal>full-stack developer · tech lead · bishkek</p>
+        <p class="hero-hint" data-reveal><span class="arrow">↓</span> <span data-i18n="l1.hint">scroll to walk</span></p>
+      </section>
+
+      <section class="layer l-whoami" id="l2" data-layer="02" data-name="l2.title">
+        <div class="title-card" data-reveal><span class="lnum">Layer:02</span><span class="lname" data-i18n="l2.title">whoami</span></div>
+        <div class="tv tv-small" data-reveal>
+          <div class="tv-screen"><pre class="typed"></pre><span class="caret">█</span></div>
+          <div class="tv-base"><span>NAVI-TV</span><i></i><i></i></div>
+        </div>
+      </section>
+
+      <section class="layer l-channels" id="l3" data-layer="03" data-name="l3.title">
+        <div class="title-card" data-reveal><span class="lnum">Layer:03</span><span class="lname" data-i18n="l3.title">channels</span></div>
+        <div class="tv tv-big" tabindex="0" data-reveal>
+          <div class="tv-screen">
+            <div class="tv-content"></div>
+            <canvas class="tv-noise"></canvas>
+          </div>
+          <div class="tv-panel">
+            <span class="tv-ch">CH 01</span>
+            <div class="knob" role="slider" aria-label="channel"><i></i></div>
+            <div class="tv-buttons"><button type="button" class="ch-prev">CH−</button><button type="button" class="ch-next">CH+</button></div>
+          </div>
+        </div>
+        <p class="hint-line dim" data-i18n="l3.hint" data-reveal>turn the knob</p>
+      </section>
+
+      <section class="layer l-protocol" id="l4" data-layer="04" data-name="l4.title">
+        <div class="title-card" data-reveal><span class="lnum">Layer:04</span><span class="lname" data-i18n="l4.title">protocol</span></div>
+        <div class="circuit" data-reveal>
+          <svg viewBox="0 0 1000 560" role="img" aria-label="technology stack as a circuit"></svg>
+          <p class="circuit-readout"></p>
+        </div>
+      </section>
+
+      <section class="layer l-wired" id="l5" data-layer="05" data-name="l5.title">
+        <div class="title-card center" data-reveal><span class="lnum">Layer:05</span><span class="lname" data-i18n="l5.title">the wired</span></div>
+        <p class="lead" data-i18n="l5.lead" data-reveal>no matter where you go, everyone is connected.</p>
+        <div class="online" data-reveal><span class="online-count">1</span><span class="dim" data-i18n="l5.count">nodes online</span></div>
+        <ul class="visitor-list" data-reveal></ul>
+        <p class="wired-text dim" data-i18n="l5.text" data-reveal></p>
+      </section>
+
+      <section class="layer l-traces" id="l6" data-layer="06" data-name="l6.title">
+        <div class="title-card" data-reveal><span class="lnum">Layer:06</span><span class="lname" data-i18n="l6.title">traces</span></div>
+        <p class="dim" data-i18n="l6.text" data-reveal></p>
+        <div id="traces" class="glass" data-reveal>
+          <form class="traces-form">
+            <span class="accent">&gt;</span>
+            <input class="traces-field" type="text" autocomplete="off" aria-label="trace message" />
+            <span class="traces-counter dim"></span>
+            <button type="submit">send</button>
+          </form>
+          <p class="traces-error accent"></p>
+          <ul class="traces-list"></ul>
+        </div>
+      </section>
+
+      <section class="layer l-navi" id="l7" data-layer="07" data-name="l7.title">
+        <div class="title-card" data-reveal><span class="lnum">Layer:07</span><span class="lname" data-i18n="l7.title">navi</span></div>
+        <p class="dim" data-i18n="l7.text" data-reveal></p>
+        <section id="terminal" class="win" data-reveal>
+          <div class="win-title"><span data-i18n="terminalTitle">NAVI · terminal</span><span class="dots"><i></i><i></i><i></i></span></div>
+          <div class="term-output" role="log" aria-live="polite"></div>
+          <label class="term-line">
+            <span class="term-prompt">guest@wired:~$</span>
+            <input class="term-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="terminal input" />
+          </label>
+          <nav class="chips" aria-label="quick commands">
+            <button type="button" data-cmd="help">help</button>
+            <button type="button" data-cmd="nodes">nodes</button>
+            <button type="button" data-cmd="who">who</button>
+            <button type="button" data-cmd="contact">contact</button>
+            <button type="button" data-cmd="cv en">cv en</button>
+            <button type="button" data-cmd="cv ru">cv ru</button>
+            <button type="button" data-cmd="lain">lain</button>
+          </nav>
+        </section>
+        <div class="links" data-reveal>
+          <a href="https://www.linkedin.com/in/suleimanovamir/" target="_blank" rel="noopener">linkedin</a>
+          <a href="https://github.com/Sotonush" target="_blank" rel="noopener">github</a>
+          <a href="https://t.me/suleimanovdev" target="_blank" rel="noopener">telegram</a>
+          <a href="mailto:suleimanovamirbk@gmail.com">mail</a>
+        </div>
+      </section>
+
+      <footer class="end">
+        <p class="glitch footer-line" data-text="CLOSE THE WORLD, OPEN THE nExt">CLOSE THE WORLD, OPEN THE nExt</p>
+        <p class="dim">navi · open source · made by amir suleimanov</p>
+      </footer>
+    </main>
+
+    <div class="lain-overlay" aria-hidden="true"><span>let's all love lain</span></div>
+    <div class="crt" aria-hidden="true"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

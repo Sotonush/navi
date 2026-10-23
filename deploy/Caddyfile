@@ -1,0 +1,9 @@
+{
+	admin off
+}
+
+:80 {
+	encode zstd gzip
+	header -Server
+	reverse_proxy navi:8080
+}
