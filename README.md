@@ -93,6 +93,11 @@ cd frontend && npm i && npm run dev   # vite on :5199, proxies /api and /wired
 | `NAVI_WIRED_PING_INTERVAL` | `400ms` | min interval between pings |
 | `NAVI_ALLOWED_ORIGINS` | `*` | websocket origin patterns |
 
+### `layer:05` — license
+
+source-available under the [PolyForm Noncommercial License 1.0.0](LICENSE).
+you can read, run, learn from and modify it for any **noncommercial** purpose, as long as you keep the `Required Notice` with my name and a link to this repo. selling it or using it commercially is not allowed. for anything else, [write to me](https://www.linkedin.com/in/suleimanovamir/).
+
 ---
 
 <div align="center">
