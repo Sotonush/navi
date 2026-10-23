@@ -9,13 +9,19 @@ import java.util.List;
 @ConfigurationProperties(prefix = "app.navi")
 public record NaviProperties(
         @DefaultValue Traces traces,
-        @DefaultValue Wired wired
+        @DefaultValue Wired wired,
+        @DefaultValue Site site
 ) {
 
     public record Traces(
             @DefaultValue("140") int maxLength,
             @DefaultValue("60s") Duration cooldown,
             @DefaultValue("50") int feedSize
+    ) {
+    }
+
+    public record Site(
+            @DefaultValue("classpath:static/index.html") String indexLocation
     ) {
     }
 

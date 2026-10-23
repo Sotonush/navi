@@ -44,7 +44,8 @@ class TraceServiceImplTest {
         clock = new MutableClock(Instant.parse("2026-10-24T09:00:00Z"));
         NaviProperties properties = new NaviProperties(
                 new NaviProperties.Traces(20, Duration.ofSeconds(60), 50),
-                new NaviProperties.Wired(10, List.of("*"), Duration.ofMillis(50), Duration.ofMillis(400)));
+                new NaviProperties.Wired(10, List.of("*"), Duration.ofMillis(50), Duration.ofMillis(400)),
+                new NaviProperties.Site("classpath:static/index.html"));
         traceService = new TraceServiceImpl(traceRepository, presenceService,
                 new TraceRateLimiter(properties, clock), properties, clock);
         when(traceRepository.save(any(Trace.class))).thenAnswer(invocation -> {

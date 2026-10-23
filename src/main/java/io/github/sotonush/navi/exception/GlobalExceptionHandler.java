@@ -35,6 +35,12 @@ public class GlobalExceptionHandler {
         return new ErrorResponse(INVALID_REQUEST);
     }
 
+    @ExceptionHandler(ResourceNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorResponse handleNotFound(ResourceNotFoundException exception) {
+        return new ErrorResponse(exception.getMessage());
+    }
+
     @ExceptionHandler(TooManyRequestsException.class)
     @ResponseStatus(HttpStatus.TOO_MANY_REQUESTS)
     public ErrorResponse handleTooManyRequests(TooManyRequestsException exception) {

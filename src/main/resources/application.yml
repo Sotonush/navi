@@ -33,3 +33,5 @@ app:
       allowed-origins: ${NAVI_ALLOWED_ORIGINS:*}
       cursor-interval: ${NAVI_WIRED_CURSOR_INTERVAL:50ms}
       ping-interval: ${NAVI_WIRED_PING_INTERVAL:400ms}
+    site:
+      index-location: ${NAVI_SITE_INDEX_LOCATION:classpath:static/index.html}

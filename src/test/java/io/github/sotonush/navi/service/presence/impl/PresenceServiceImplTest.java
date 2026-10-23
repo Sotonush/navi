@@ -34,7 +34,8 @@ class PresenceServiceImplTest {
     void setUp() {
         NaviProperties properties = new NaviProperties(
                 new NaviProperties.Traces(140, Duration.ofSeconds(60), 50),
-                new NaviProperties.Wired(2, List.of("*"), Duration.ofMillis(50), Duration.ofMillis(400)));
+                new NaviProperties.Wired(2, List.of("*"), Duration.ofMillis(50), Duration.ofMillis(400)),
+                new NaviProperties.Site("classpath:static/index.html"));
         clock = new MutableClock(Instant.parse("2026-10-24T09:00:00Z"));
         presenceService = new PresenceServiceImpl(new HandleGenerator(), jsonMapper, properties, clock);
     }
